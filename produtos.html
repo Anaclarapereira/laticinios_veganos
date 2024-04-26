@@ -35,30 +35,60 @@
         </div>
       </nav>
 
-<div class="container-fluid p-5 bg-primary text-white text-center">
-  <h1>My First Bootstrap Page</h1>
-  <p>Resize this responsive page to see the effect!</p> 
-</div>
-  
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-sm-4">
-      <h3>Column 1</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 2</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-    <div class="col-sm-4">
-      <h3>Column 3</h3>        
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
-    </div>
-  </div>
-</div>
 
+      <div class="container mt-3">
+        <h2>Striped Rows</h2>
+        <p>The .table-striped class adds zebra-stripes to a table:</p>            
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Sobrenome</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="dados">
+       
+          </tbody>
+        </table>
+      </div>
+<script src="js/clientes.js"></script>      
+<script>
+
+    const clientes = [
+        {produto:"gloss hidratante volumoso", preco:"R$54,00", estoque:"554", descricao: "Descubra o segredo para lábios irresistíveis com nosso Gloss Hidratante Volumoso. Enriquecido com ingredientes nutritivos, ele proporciona uma hidratação intensa enquanto aumenta sutilmente o volume dos lábios, deixando-os com um brilho sedutor. Experimente o toque luxuoso e o efeito volumoso deslumbrante em cada aplicação.", imagem: ""},
+        {produto:"pó rejuvenescedor", preço:"R$280,00", estoque:"725", descrição: "Desperte uma nova juventude em sua pele com nosso Pó Rejuvenescedor. Sua fórmula inovadora suaviza instantaneamente linhas finas e imperfeições, proporcionando um acabamento luminoso e radiante. Revitalize sua aparência em segundos.", imagem: ""},
+        {produto:"contorno bastão", preço:"R$74,00", estoque:"943", descrição: "Escolha a elegância instantânea com nosso Contorno Bastão. Sua textura cremosa desliza suavemente, esculpindo e realçando os traços faciais com facilidade. Crie definição e profundidade de forma rápida e precisa, para um visual impecável em qualquer ocasião. ", imagem: ""},
+        {produto:"sérum eliminador de rugas", preço:"R$240", estoque:"325", descrição: "Transforme a pele com nosso Sérum Eliminador de Rugas. Sua fórmula avançada combate as rugas profundas e linhas de expressão, revelando uma aparência mais jovem e radiante. Desfrute de uma pele visivelmente mais lisa e firme em instantes imagem: " },
+        {produto:"base de cobertura angelical", preço:"R$600" , estoque:"800", descrição: `A base de cobertura angelical se ajusta perfeitamente ao tom da sua pele, oferecendo uma aparência natural e impecável.
+`, imagem: " "},
+    ]
+    const tbody = document.getElementById('dados')
+
+    clientes.forEach((i, e) => {
+        console.log(i.nome)
+        console.log(i.sobrenome)
+        console.log(i.email)
+        const tr = document.createElement('tr')
+
+        const td1 = document.createElement('td')
+        const td2 = document.createElement('td')
+        const td3 = document.createElement('td')
+
+        td1.innerText = i.nome
+        td2.innerText = i.sobrenome
+        td3.innerText = i.email
+
+        tr.append(td1)
+        tr.append(td2)
+        tr.append(td3)
+
+        tbody.append(tr)
+
+    })
+    
+    
+
+</script>
 </body>
 </html>
